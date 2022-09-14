@@ -1,0 +1,13 @@
+#spring:
+#  datasource:
+#    url: jdbc:sqlserver://database-exam4.database.windows.net:1433;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+#    username: database-exam4
+#    password: Huy2052002
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#      dialect : org.hibernate.dialect.SQLServer2012Dialect
+#
+#server:
+#  port: 8086
