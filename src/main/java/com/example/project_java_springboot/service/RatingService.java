@@ -6,6 +6,7 @@ import com.example.project_java_springboot.entity.dto.RatingDTO;
 import com.example.project_java_springboot.entity.enums.EnumStatus;
 import com.example.project_java_springboot.repository.CustomerRepository;
 import com.example.project_java_springboot.repository.RatingRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class RatingService {
     }
 
     public List<Rating> findAll() {
-        return ratingRepository.findAll();
+        return ratingRepository.findAll(Sort.by("id"));
     }
 
     public Optional<Rating> findById(Integer id) {

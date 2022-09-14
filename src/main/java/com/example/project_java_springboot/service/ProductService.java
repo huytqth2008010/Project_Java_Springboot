@@ -24,7 +24,7 @@ public class ProductService {
     }
 
     public List<Product> findAll() {
-        return productRepository.findAll();
+        return productRepository.findAll(Sort.by("id"));
     }
     public Page<Product> getPage(String keyword, Integer categoryId, String sortPrice, int pageIndex, int pageSize) {
         Specification<Product> specification = Specification.where(null);

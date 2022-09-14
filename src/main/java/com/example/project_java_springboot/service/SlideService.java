@@ -6,6 +6,7 @@ import com.example.project_java_springboot.entity.Slide;
 import com.example.project_java_springboot.entity.dto.SlideDTO;
 import com.example.project_java_springboot.entity.enums.EnumStatus;
 import com.example.project_java_springboot.repository.SlideRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class SlideService {
 
 
     public List<Slide> findAll() {
-        return slideRepository.findAll();
+        return slideRepository.findAll(Sort.by("id"));
     }
 
     public Optional<Slide> findById(Integer id) {

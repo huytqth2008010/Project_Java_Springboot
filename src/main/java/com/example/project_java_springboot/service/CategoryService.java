@@ -4,6 +4,7 @@ import com.example.project_java_springboot.entity.Category;
 import com.example.project_java_springboot.entity.enums.EnumStatus;
 import com.example.project_java_springboot.entity.enums.ProductStatus;
 import com.example.project_java_springboot.repository.CategoryRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class CategoryService {
     }
 
     public List<Category> findAll() {
-        return categoryRepository.findAll();
+        return categoryRepository.findAll(Sort.by("id"));
     }
 
     public Optional<Category> findById(Integer id) {

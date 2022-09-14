@@ -6,6 +6,7 @@ import com.example.project_java_springboot.entity.Reply;
 import com.example.project_java_springboot.entity.dto.ReplyDTO;
 import com.example.project_java_springboot.entity.enums.EnumStatus;
 import com.example.project_java_springboot.repository.ReplyRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class ReplyService {
     }
 
     public List<Reply> findAll() {
-        return replyRepository.findAll();
+        return replyRepository.findAll(Sort.by("id"));
     }
 
     public Optional<Reply> findById(Integer id) {

@@ -4,6 +4,7 @@ import com.example.project_java_springboot.entity.Comment;
 import com.example.project_java_springboot.entity.dto.CommentDTO;
 import com.example.project_java_springboot.entity.enums.EnumStatus;
 import com.example.project_java_springboot.repository.CommentRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class CommentService {
     }
 
     public List<Comment> findAll() {
-        return commentRepository.findAll();
+        return commentRepository.findAll(Sort.by("id"));
     }
 
     public Optional<Comment> findById(Integer id) {

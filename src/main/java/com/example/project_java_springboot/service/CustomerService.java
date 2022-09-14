@@ -6,6 +6,7 @@ import com.example.project_java_springboot.entity.Customer;
 import com.example.project_java_springboot.entity.dto.CustomerDTO;
 import com.example.project_java_springboot.entity.enums.EnumStatus;
 import com.example.project_java_springboot.repository.CustomerRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class CustomerService {
     }
 
     public List<Customer> findAll() {
-        return customerRepository.findAll();
+        return customerRepository.findAll(Sort.by("id"));
     }
 
     public Optional<Customer> findById(Integer id) {
