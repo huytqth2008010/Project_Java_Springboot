@@ -30,12 +30,7 @@ public class ProjectJavaSpringbootApplication {
 		return new WebMvcConfigurerAdapter() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("http://localhost:8087")
-						.allowedOrigins("http://localhost:8088")
-						.allowedOrigins("http://localhost:63343")
-						.allowedOrigins("http://localhost:63340")
-						.allowedOrigins("http://localhost:63342")
-						.allowedOrigins("http://localhost:63341");
+				registry.addMapping("/**").allowedOrigins("*");
 
 			}
 		};
