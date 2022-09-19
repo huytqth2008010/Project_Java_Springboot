@@ -56,6 +56,7 @@ public class CommentController {
         Comment commentRequest = modelMapper.map(commentDTO, Comment.class);
         Comment comment = commentService.update(id, commentRequest);
         CommentDTO commentResponse = modelMapper.map(comment, CommentDTO.class);
+
         return ResponseEntity.ok().body(commentResponse);
     }
 

@@ -13,4 +13,6 @@ public class OrderDTO {
     private String shipAddress;
     private String shipPhone;
     private String shipNote;
+    private String status;
+
 }

@@ -3,6 +3,7 @@ package com.example.project_java_springboot.service;
 import com.example.project_java_springboot.entity.*;
 import com.example.project_java_springboot.entity.dto.OrderDTO;
 import com.example.project_java_springboot.entity.enums.CartItemStatus;
+import com.example.project_java_springboot.entity.enums.EnumStatus;
 import com.example.project_java_springboot.entity.enums.OrderStatus;
 import com.example.project_java_springboot.entity.search.SearchCriteria;
 import com.example.project_java_springboot.entity.search.SearchCriteriaOperator;
@@ -146,5 +147,15 @@ public class OrderService {
 
     public void deleteById(String id) {
         orderRepository.deleteById(id);
+    }
+    public Order update(String id, Order orderRequest) {
+        Optional<Order> order = orderRepository.findById(id);
+        Order order1 = order.get();
+        order1.setShipAddress(orderRequest.getShipAddress());
+        order1.setShipName(orderRequest.getShipName());
+        order1.setShipNote(orderRequest.getShipNote());
+        order1.setShipPhone(orderRequest.getShipPhone());
+        order1.setStatus(orderRequest.getStatus());
+        return orderRepository.save(order1);
     }
 }
