@@ -55,21 +55,17 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     public ResponseEntity<Product> update(@PathVariable String id, @RequestBody Product product) {
         Optional<Product> optionalProduct = productService.findById(id);
-
         if (!optionalProduct.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
-
         Product existProduct = optionalProduct.get();
-
-
         if (product.getStatus() == null) {
             product.setStatus(ProductStatus.ACTIVE);
         }
-
         existProduct.setName(product.getName());
         existProduct.setThumbnail(product.getThumbnail());
         existProduct.setDescription(product.getDescription());
+        existProduct.setCost_price(product.getCost_price());
         existProduct.setUnit_price(product.getUnit_price());
         existProduct.setPromotion_price(product.getPromotion_price());
         existProduct.setQty(product.getQty());

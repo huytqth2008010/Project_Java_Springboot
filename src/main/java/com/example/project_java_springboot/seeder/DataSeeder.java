@@ -51,15 +51,15 @@ public class DataSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        fakeImages.add("https://photographer.vn/wp-content/uploads/2020/09/chupanhdouongsangtrong1.jpg");
-        fakeImages.add("http://rivalmedia.vn/wp-content/uploads/2021/06/chup-anh-san-pham-1.jpg");
-        fakeImages.add("https://lavenderstudio.com.vn/wp-content/uploads/2017/03/chup-san-pham-uy-tin.jpg");
-        fakeImages.add("http://rivalmedia.vn/wp-content/uploads/2021/06/chup-anh-san-pham-2.jpg");
-        fakeImages.add("https://d1j8r0kxyu9tj8.cloudfront.net/images/1565661304KeDpTYhsF3F95Xt.jpg");
-        fakeImages.add("https://margram.vn/files/chup-anh-san-pham-61.jpg");
-        fakeImages.add("https://images.squarespace-cdn.com/content/v1/53883795e4b016c956b8d243/1548761631280-IWOZDVZXHRQYRIGYG365/27072809_2107874492572797_5078792318071986073_n.jpg");
-        fakeImages.add("https://htmediagroup.vn/wp-content/uploads/2021/07/anh-my-pham-3-min.jpg");
-        fakeImages.add("https://htmediagroup.vn/wp-content/uploads/2021/07/anh-my-pham-2-min.jpg");
+        fakeImages.add("https://afamilycdn.com/150157425591193600/2022/2/25/com-rang-thap-cam-2-16457750259421468698180.jpg");
+        fakeImages.add("https://bloganchoi.com/wp-content/uploads/2020/07/cach-lam-com-chien-trung-omurice-ngon-kho-cuong-0.jpg");
+        fakeImages.add("https://www.thatlangon.com/wp-content/uploads/2020/11/mi-xao-bo-2-e1607316904890.jpg");
+        fakeImages.add("https://tphcm.cdnchinhphu.vn/334895287454388224/2022/1/12/bun-bo-u-thung-16419442121621454559594.jpg");
+        fakeImages.add("https://cdn.tgdd.vn/Files/2020/04/03/1246339/cach-nau-bun-ca-ha-noi-thom-ngon-chuan-vi-khong-ta-14-760x367.jpg");
+        fakeImages.add("https://nghebep.com/wp-content/uploads/2018/08/cach-lam-bun-moc-gio-heo.jpg");
+        fakeImages.add("https://statics.vinpearl.com/com-tam-ngon-o-sai-gon-0_1630562640.jpg");
+        fakeImages.add("https://wecheckin.vn/wp-content/uploads/2019/11/quan-com-ngon-binh-dan-tai-ha-noi-wecheckin-9.jpg");
+        fakeImages.add("https://statics.vinpearl.com/com-am-phu-hue-02_1631074972.jpg");
 
         fakePayment.add("Thanh toán bằng thẻ");
         fakePayment.add("Thanh toán bằng séc trực tuyến");
@@ -297,9 +297,10 @@ public class DataSeeder implements CommandLineRunner {
                 product.setName(faker.name().title());
                 product.setThumbnail(fakeImages.get(faker.number().numberBetween(0, fakeImages.size() - 1)));
                 product.setDescription(faker.lorem().sentence());
-                product.setUnit_price(new BigDecimal(faker.number().numberBetween(200, 999)));
+                product.setCost_price(new BigDecimal(faker.number().numberBetween(20000, 999999)));
+                product.setUnit_price(new BigDecimal(faker.number().numberBetween(20000, 999999)));
                 product.setQty(faker.number().numberBetween(1,10));
-                product.setPromotion_price(new BigDecimal(faker.number().numberBetween(200, 999)));
+                product.setPromotion_price(new BigDecimal(faker.number().numberBetween(20000, 999999)));
                 product.setCategoryId(categories.get(faker.number().numberBetween(0, categories.size() - 1)).getId());
                 product.setStatus(ProductStatus.ACTIVE);
                 products.add(product);
