@@ -69,13 +69,9 @@ public class OrderController {
         if (!optionalOrder.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
-        if (orderDTO.getStatus() == null) {
-            orderDTO.setStatus(String.valueOf(OrderStatus.WAITING));
-        }
         Order orderRequest = modelMapper.map(orderDTO, Order.class);
         Order order = orderService.update(id, orderRequest);
         OrderDTO orderResponse = modelMapper.map(order, OrderDTO.class);
-
         return ResponseEntity.ok().body(orderResponse);
     }
 }
