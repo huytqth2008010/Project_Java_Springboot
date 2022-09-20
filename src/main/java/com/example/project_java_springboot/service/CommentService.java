@@ -44,7 +44,7 @@ public class CommentService {
         comment1.setContent(commentRequest.getContent());
         comment1.setId_product(commentRequest.getId_product());
         comment1.setId_account(commentRequest.getId_account());
-        comment1.setStatus(EnumStatus.ACTIVE);
+        comment1.setStatus(commentRequest.getStatus());
         return commentRepository.save(comment1);
     }
 }

@@ -14,7 +14,4 @@ public class CommentDTO {
     private  String id_account;
     private String id_product;
     private String status;
-
-
-
 }

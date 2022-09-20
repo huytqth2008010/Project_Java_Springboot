@@ -44,7 +44,7 @@ public class ReplyService {
         objGet.setId_product(objRequestUpdate.getId_product());
         objGet.setId_comment(objRequestUpdate.getId_comment());
         objGet.setContent(objRequestUpdate.getContent());
-        objGet.setStatus(EnumStatus.ACTIVE);
+        objGet.setStatus(objRequestUpdate.getStatus());
         return replyRepository.save(objGet);
     }
     public void deleteById(Integer id) {
