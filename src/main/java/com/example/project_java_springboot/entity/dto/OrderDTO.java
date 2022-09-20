@@ -17,8 +17,6 @@ public class OrderDTO {
     private String shipAddress;
     private String shipPhone;
     private String shipNote;
-
-    @Enumerated(EnumType.ORDINAL)
-    private OrderStatus status;
+    private String status;
 
 }
