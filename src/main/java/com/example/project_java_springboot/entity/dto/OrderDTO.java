@@ -13,6 +13,7 @@ import javax.persistence.Enumerated;
 @Builder
 @ToString
 public class OrderDTO {
+    private String payment_method;
     private String shipName;
     private String shipAddress;
     private String shipPhone;

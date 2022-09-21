@@ -155,6 +155,7 @@ public class OrderService {
     public Order update(String id, Order orderRequest) {
         Optional<Order> order = orderRepository.findById(id);
         Order order1 = order.get();
+        order1.setPayment_method(orderRequest.getPayment_method());
         order1.setShipAddress(orderRequest.getShipAddress());
         order1.setShipName(orderRequest.getShipName());
         order1.setShipNote(orderRequest.getShipNote());
