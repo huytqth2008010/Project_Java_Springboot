@@ -17,11 +17,13 @@ import com.example.project_java_springboot.until.DateTimeHelper;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -43,7 +45,9 @@ public class OrderService {
         this.authenticationService = authenticationService;
         this.modelMapper = new ModelMapper();
     }
-
+    public List<Order> findAll() {
+        return orderRepository.findAll(Sort.by("id"));
+    }
     public Page<Order> getPage(Integer pageIndex, Integer pageSize, String startDate, String endDate,Integer status, String accountId, String userName, String productName) {
         Specification<Order> specification = Specification.where(null);
 

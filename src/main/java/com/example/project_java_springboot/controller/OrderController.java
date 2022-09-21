@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin
@@ -28,6 +29,10 @@ public class OrderController {
         this.modelMapper = modelMapper;
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/get-all")
+    public ResponseEntity<List<Order>> findAll() {
+        return ResponseEntity.ok(orderService.findAll());
+    }
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Page<Order>> findAll(
             @RequestParam(defaultValue = "1") Integer pageIndex,
