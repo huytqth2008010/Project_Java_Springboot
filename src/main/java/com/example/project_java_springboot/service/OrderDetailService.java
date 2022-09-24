@@ -1,6 +1,8 @@
 package com.example.project_java_springboot.service;
 
+import com.example.project_java_springboot.entity.CartItemId;
 import com.example.project_java_springboot.entity.OrderDetail;
+import com.example.project_java_springboot.entity.OrderDetailId;
 import com.example.project_java_springboot.repository.OrderDetailRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,20 +16,16 @@ public class OrderDetailService {
     public OrderDetailService(OrderDetailRepository orderDetailRepository) {
         this.orderDetailRepository = orderDetailRepository;
     }
-
     public List<OrderDetail> findAll() {
         return orderDetailRepository.findAll();
     }
 
-    public Optional<OrderDetail> findById(int id) {
-        return orderDetailRepository.findById(id);
+    public List<OrderDetail> findByOrderDetail(String orderDetailId){
+        return  orderDetailRepository.findByOrderDetail(orderDetailId);
     }
 
     public OrderDetail save(OrderDetail orderDetail) {
         return orderDetailRepository.save(orderDetail);
     }
 
-    public void deleteById(int id) {
-        orderDetailRepository.deleteById(id);
-    }
 }
